@@ -5,7 +5,17 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), svgr()],
+    plugins: [
+      react(), 
+      svgr({
+        svgrOptions:{
+          icon:true,
+          svgProps:{
+            fill:"currentColor",
+            stroke:"currentColor"
+          }
+        }
+      })],
     server:{
         host:true,
     },
